@@ -3,16 +3,82 @@ import java.util.concurrent.ThreadLocalRandom;
 
 // use this class if you are designing your own Rubik's cube implementation
 public class RubiksCube {
+    Cubie cubie1;
+    Cubie cubie2;
+    Cubie cubie3;
+    Cubie cubie4;
+    Cubie cubie5;
+    Cubie cubie6;
+    Cubie cubie7;
+    Cubie cubie8;
+
+    char[] face1;
+    char[] face2;
+    char[] face3;
+    char[] face4;
+    char[] face5;
+    char[] face6;
+
+    char[][] faceArray;
+
+
 
     // initialize a solved rubiks cube
     public RubiksCube() {
         // TODO
+
+        //Each Cubie is read from the top right corner of the cube
+        //The counts of positions go counter clockwise of the top layer
+        //and then also counterclockwise of the bottom layer directly below 1-4
+
+        cubie1 = new Cubie('b', 'r', 'w');
+        cubie2 = new Cubie('w', 'r', 'g');
+        cubie3 = new Cubie('g', 'r', 'y');
+        cubie4 = new Cubie('y', 'r', 'b');
+        cubie5 = new Cubie('w', 'o', 'b');
+        cubie6 = new Cubie('g', 'o', 'w');
+        cubie7 = new Cubie('b', 'o', 'y');
+        cubie8 = new Cubie('y', 'o', 'g');
+
+
+
+
+        //face1 = new char[4];
+        face1 = new char[]{'r','r','r','r'};  //red
+        face2 = new char[]{'w','w','w','w'};  //white
+        face3 = new char[]{'b','b','b','b'};  //blue
+        face4 = new char[]{'g','g','g','g'};  //green
+        face5 = new char[]{'y','y','y','y'};  //yellow
+        face6 = new char[]{'o','o','o','o'};  //orange
+
+
+        faceArray = new char[][]{face1, face2, face3, face4, face5, face6};
+
     }
 
 
-    // creates a copy of the rubics cube
+    // creates a copy of the rubiks cube
     public RubiksCube(RubiksCube r) {
         // TODO
+        cubie1 = new Cubie(r.cubie1.front, r.cubie1.top, r.cubie1.rightSide);
+        cubie2 = new Cubie(r.cubie2.front, r.cubie2.top, r.cubie2.rightSide);
+        cubie3 = new Cubie(r.cubie3.front, r.cubie3.top, r.cubie3.rightSide);
+        cubie4 = new Cubie(r.cubie4.front, r.cubie4.top, r.cubie4.rightSide);
+        cubie5 = new Cubie(r.cubie5.front, r.cubie5.top, r.cubie5.rightSide);
+        cubie6 = new Cubie(r.cubie6.front, r.cubie6.top, r.cubie6.rightSide);
+        cubie7 = new Cubie(r.cubie7.front, r.cubie7.top, r.cubie7.rightSide);
+        cubie8 = new Cubie(r.cubie8.front, r.cubie8.top, r.cubie8.rightSide);
+
+        face1 = new char[]{cubie1.top, cubie2.top, cubie3.top, cubie4.top};  //red
+        face2 = new char[]{cubie1.rightSide, cubie2.front, cubie5.front, cubie6.rightSide};  //white
+        face3 = new char[]{cubie1.front, cubie4.rightSide, cubie5.rightSide, cubie7.front};  //blue
+        face4 = new char[]{cubie2.rightSide, cubie3.front, cubie6.front, cubie8.rightSide};  //green
+        face5 = new char[]{cubie3.rightSide, cubie4.front, cubie7.rightSide, cubie8.front};  //yellow
+        face6 = new char[]{cubie5.top, cubie6.top, cubie7.top, cubie8.top};  //orange
+
+        faceArray = new char[][]{face1, face2, face3, face4, face5, face6};
+
+
     }
 
     // return true if this rubik's cube is equal to the other rubik's cube
@@ -22,6 +88,18 @@ public class RubiksCube {
             return false;
         RubiksCube other = (RubiksCube) obj;
         // TODO
+        char[] currentFace;
+        for(int i=0;i<6;i++){
+            currentFace = faceArray[i];
+            for(int j=0;j<4;j++){
+                if(currentFace == other.face1[j]){
+
+                }
+            }
+        }
+
+
+
         return false;
     }
 
@@ -42,6 +120,28 @@ public class RubiksCube {
 
     public boolean isSolved() {
         // TODO
+        boolean topCount = false;
+        boolean bottomCount = false;
+        char[] topCubies = new char[8];
+        topCubies[0] = cubie1.top;
+        topCubies[1] = cubie2.top;
+        topCubies[2] = cubie3.top;
+        topCubies[3] = cubie4.top;
+        topCubies[4] = cubie5.top;
+        topCubies[5] = cubie6.top;
+        topCubies[6] = cubie7.top;
+        topCubies[7] = cubie8.top;
+
+        if(topCubies[0]==topCubies[1] && topCubies[2]==topCubies[3] && topCubies[1]==topCubies[3]){
+            topCount = true;
+        }
+
+        if(topCubies[4]==topCubies[5] && topCubies[6]==topCubies[7] && topCubies[4]==topCubies[7]){
+            bottomCount = true;
+        }
+
+        if(topCount && bottomCount) return true;
+
         return false;
     }
 
