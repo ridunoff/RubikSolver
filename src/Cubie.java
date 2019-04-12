@@ -18,6 +18,10 @@ public class Cubie {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return Character.toString(front);
+    }
 
     public void rotate(char direction){
 

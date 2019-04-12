@@ -90,6 +90,10 @@ public class RubiksCubeTest {
     @Test
     public void testRotateUpper() {
         testRotation('u');
+        //RubiksCube r1 = new RubiksCube();
+        //r1 = r1.rotate('u');
+        //r1 = r1.rotate('U');
+
     }
 
     @Test

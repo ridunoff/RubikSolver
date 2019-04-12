@@ -11,7 +11,7 @@ public class RubiksCube {
     Cubie cubie6;
     Cubie cubie7;
     Cubie cubie8;
-
+    Cubie cubie11;
     char[] face1;
     char[] face2;
     char[] face3;
@@ -77,6 +77,9 @@ public class RubiksCube {
     }
 
     public void updateFaces(){
+
+
+
         face1 = new char[]{cubie1.top, cubie2.top, cubie3.top, cubie4.top};  //red
         face2 = new char[]{cubie1.rightSide, cubie2.front, cubie5.front, cubie6.rightSide};  //white
         face3 = new char[]{cubie1.front, cubie4.rightSide, cubie5.rightSide, cubie7.front};  //blue
@@ -85,12 +88,14 @@ public class RubiksCube {
         face6 = new char[]{cubie5.top, cubie6.top, cubie7.top, cubie8.top};  //orange
 
         faceArray = new ArrayList<>();
+
         faceArray.add(face1);
         faceArray.add(face2);
         faceArray.add(face3);
         faceArray.add(face4);
         faceArray.add(face5);
         faceArray.add(face6);
+
     }
 
     public void printFace(){
@@ -111,12 +116,15 @@ public class RubiksCube {
 
         for(int i=0;i<6;i++){
             for(int j=0;j<6;j++){
+                int counter2 = 0;
                 for(int k=0; k<faceArray.get(j).length; k++){
-                    int counter2 = 0;
                     if (other.faceArray.get(i)[k] == faceArray.get(j)[k]) {
                         counter2++;
                     }
-                    if(counter2==faceArray.get(j).length) counter++;
+                    //System.out.println(counter2);
+                    if(counter2==faceArray.get(j).length) {
+                        counter++;
+                    }
                 }
             }
         }
@@ -187,6 +195,7 @@ public class RubiksCube {
         for (char r : c) {
             rub = rub.rotate(r);
         }
+//        printFace();
         return rub;
     }
 
@@ -198,26 +207,37 @@ public class RubiksCube {
 
         RubiksCube rotated = new RubiksCube(this);
 
-        if(c == 'u'){
-           //rotate cubies 1 2 3 and 4 CW
+        if(c == 'U'){
+            Cubie temp=cubie1;
             rotated.cubie1 = cubie2;
             rotated.cubie2 = cubie3;
             rotated.cubie3 = cubie4;
-            rotated.cubie4 = cubie1;
-            updateFaces();
-            printFace();
+            rotated.cubie4 = temp;
+            rotated.updateFaces();
+            //rotated.printFace();
 
         }
-        if(c == 'U'){
-            // rotate cubies 1 2 3 and 4 CCW
+        if(c == 'u'){
+            //rotate cubies 1 2 3 and 4 CCW
+            cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
+
             rotated.cubie1 = cubie4;
-            rotated.cubie2 = cubie1;
+            rotated.cubie2 = cubie11;
             rotated.cubie3 = cubie2;
             rotated.cubie4 = cubie3;
-            updateFaces();
-            printFace();
+            rotated.updateFaces();
+            //rotated.printFace();
         }
         if(c == 'r'){
+            cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
+
+            rotated.cubie1 = cubie5;
+            rotated.cubie2 = cubie11;
+            rotated.cubie5 = cubie6;
+            rotated.cubie6 = cubie2;
+            rotated.updateFaces();
+            System.out.println("helpme");
+            rotated.printFace();
             //rotate cubies 1, 2, 5 and 6
         }
         if(c == 'R'){
