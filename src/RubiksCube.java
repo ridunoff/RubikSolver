@@ -19,7 +19,7 @@ public class RubiksCube {
     char[] face5;
     char[] face6;
 
-    char[][] faceArray;
+    ArrayList<char[]> faceArray;
 
 
 
@@ -41,8 +41,6 @@ public class RubiksCube {
         cubie8 = new Cubie('y', 'o', 'g');
 
 
-
-
         //face1 = new char[4];
         face1 = new char[]{'r','r','r','r'};  //red
         face2 = new char[]{'w','w','w','w'};  //white
@@ -52,8 +50,13 @@ public class RubiksCube {
         face6 = new char[]{'o','o','o','o'};  //orange
 
 
-        faceArray = new char[][]{face1, face2, face3, face4, face5, face6};
-
+        faceArray = new ArrayList<>();
+        faceArray.add(face1);
+        faceArray.add(face2);
+        faceArray.add(face3);
+        faceArray.add(face4);
+        faceArray.add(face5);
+        faceArray.add(face6);
     }
 
 
@@ -69,6 +72,11 @@ public class RubiksCube {
         cubie7 = new Cubie(r.cubie7.front, r.cubie7.top, r.cubie7.rightSide);
         cubie8 = new Cubie(r.cubie8.front, r.cubie8.top, r.cubie8.rightSide);
 
+        updateFaces();
+
+    }
+
+    public void updateFaces(){
         face1 = new char[]{cubie1.top, cubie2.top, cubie3.top, cubie4.top};  //red
         face2 = new char[]{cubie1.rightSide, cubie2.front, cubie5.front, cubie6.rightSide};  //white
         face3 = new char[]{cubie1.front, cubie4.rightSide, cubie5.rightSide, cubie7.front};  //blue
@@ -76,9 +84,19 @@ public class RubiksCube {
         face5 = new char[]{cubie3.rightSide, cubie4.front, cubie7.rightSide, cubie8.front};  //yellow
         face6 = new char[]{cubie5.top, cubie6.top, cubie7.top, cubie8.top};  //orange
 
-        faceArray = new char[][]{face1, face2, face3, face4, face5, face6};
+        faceArray = new ArrayList<>();
+        faceArray.add(face1);
+        faceArray.add(face2);
+        faceArray.add(face3);
+        faceArray.add(face4);
+        faceArray.add(face5);
+        faceArray.add(face6);
+    }
 
-
+    public void printFace(){
+        for(int i=0; i<6; i++){
+            System.out.println(new String(faceArray.get(i)));
+        }
     }
 
     // return true if this rubik's cube is equal to the other rubik's cube
@@ -89,16 +107,21 @@ public class RubiksCube {
         RubiksCube other = (RubiksCube) obj;
         // TODO
         char[] currentFace;
-        for(int i=0;i<6;i++){
-            currentFace = faceArray[i];
-            for(int j=0;j<4;j++){
-                if(currentFace == other.face1[j]){
+        int counter=0;
 
+        for(int i=0;i<6;i++){
+            for(int j=0;j<6;j++){
+                for(int k=0; k<faceArray.get(j).length; k++){
+                    int counter2 = 0;
+                    if (other.faceArray.get(i)[k] == faceArray.get(j)[k]) {
+                        counter2++;
+                    }
+                    if(counter2==faceArray.get(j).length) counter++;
                 }
             }
         }
 
-
+        if(counter==6) return true;
 
         return false;
     }
@@ -114,9 +137,19 @@ public class RubiksCube {
      */
     @Override
     public int hashCode() {
-        // TODO
-        return 0;
+        int hashcode = 0;
+        for(int i=0;i<face1.length;i++){
+            hashcode += (int)face1[i] * i;
+            hashcode += (int)face2[i] * i;
+            hashcode += (int)face3[i] * i;
+            hashcode += (int)face4[i] * i;
+            hashcode += (int)face5[i] * i;
+            hashcode += (int)face6[i] * i;
+        }
+        //System.out.println(hashcode);
+        return hashcode;
     }
+
 
     public boolean isSolved() {
         // TODO
@@ -146,8 +179,10 @@ public class RubiksCube {
     }
 
 
+
     // given a list of rotations, return a rubik's cube with the rotations applied
     public RubiksCube rotate(List<Character> c) {
+
         RubiksCube rub = this;
         for (char r : c) {
             rub = rub.rotate(r);
@@ -160,7 +195,43 @@ public class RubiksCube {
     // Do not modify this rubik's cube.
     public RubiksCube rotate(char c) {
         // TODO
-        return this;
+
+        RubiksCube rotated = new RubiksCube(this);
+
+        if(c == 'u'){
+           //rotate cubies 1 2 3 and 4 CW
+            rotated.cubie1 = cubie2;
+            rotated.cubie2 = cubie3;
+            rotated.cubie3 = cubie4;
+            rotated.cubie4 = cubie1;
+            updateFaces();
+            printFace();
+
+        }
+        if(c == 'U'){
+            // rotate cubies 1 2 3 and 4 CCW
+            rotated.cubie1 = cubie4;
+            rotated.cubie2 = cubie1;
+            rotated.cubie3 = cubie2;
+            rotated.cubie4 = cubie3;
+            updateFaces();
+            printFace();
+        }
+        if(c == 'r'){
+            //rotate cubies 1, 2, 5 and 6
+        }
+        if(c == 'R'){
+            //rotate cubies 3, 4, 7 and 8
+        }
+        if(c == 'f'){
+
+        }
+        if(c == 'F'){
+
+        }
+
+
+        return rotated;
     }
 
     // returns a random scrambled rubik's cube by applying random rotations
@@ -208,3 +279,4 @@ public class RubiksCube {
     }
 
 }
+

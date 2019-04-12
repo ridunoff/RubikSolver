@@ -19,9 +19,9 @@ public class Cubie {
     }
 
 
-//    public void rotate(char direction){
-//
-//    }
+    public void rotate(char direction){
+
+    }
 
 
 
