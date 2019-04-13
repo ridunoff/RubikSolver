@@ -1,6 +1,9 @@
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
 // use this class if you are designing your own Rubik's cube implementation
 public class RubiksCube {
     Cubie cubie1;
@@ -311,8 +314,22 @@ public class RubiksCube {
 
     // return the list of rotations needed to solve a rubik's cube
     public List<Character> solve() {
-        // TODO
-        return new ArrayList<>();
+        ArrayList<Character>sol=new ArrayList<Character>();
+        Queue<Character> q = new LinkedList<Character>();
+
+        while (!q.isEmpty()) {
+            char x=q.poll();//This could also be pollLast or pollFirst.... unclear which of the three
+            for y in this.
+
+
+
+
+
+
+
+
+        }
+        return sol;
     }
 
 }
