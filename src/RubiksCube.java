@@ -37,8 +37,8 @@ public class RubiksCube {
         cubie4 = new Cubie('y', 'r', 'b');
         cubie5 = new Cubie('w', 'o', 'b');
         cubie6 = new Cubie('g', 'o', 'w');
-        cubie7 = new Cubie('b', 'o', 'y');
-        cubie8 = new Cubie('y', 'o', 'g');
+        cubie7 = new Cubie('y', 'o', 'g');
+        cubie8 = new Cubie('b', 'o', 'y');
 
 
         //face1 = new char[4];
@@ -82,9 +82,9 @@ public class RubiksCube {
 
         face1 = new char[]{cubie1.top, cubie2.top, cubie3.top, cubie4.top};  //red
         face2 = new char[]{cubie1.rightSide, cubie2.front, cubie5.front, cubie6.rightSide};  //white
-        face3 = new char[]{cubie1.front, cubie4.rightSide, cubie5.rightSide, cubie7.front};  //blue
-        face4 = new char[]{cubie2.rightSide, cubie3.front, cubie6.front, cubie8.rightSide};  //green
-        face5 = new char[]{cubie3.rightSide, cubie4.front, cubie7.rightSide, cubie8.front};  //yellow
+        face3 = new char[]{cubie1.front, cubie4.rightSide, cubie5.rightSide, cubie8.front};  //blue
+        face4 = new char[]{cubie2.rightSide, cubie3.front, cubie6.front, cubie7.rightSide};  //green
+        face5 = new char[]{cubie3.rightSide, cubie4.front, cubie8.rightSide, cubie7.front};  //yellow
         face6 = new char[]{cubie5.top, cubie6.top, cubie7.top, cubie8.top};  //orange
 
         faceArray = new ArrayList<>();
@@ -229,6 +229,7 @@ public class RubiksCube {
             rotated.printFace();
         }
         if(c == 'r'){
+            //rotate cubies 1, 2, 5 and 6 CW
             //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
             rotated.cubie1 = cubie5.rotateCCW();
@@ -236,20 +237,12 @@ public class RubiksCube {
             rotated.cubie6 = cubie2.rotateCCW();
             rotated.cubie5 = cubie6.rotateCW();
             rotated.updateFaces();
-            //rotated.printFace();
+            //rotated.printFace();;
 
-//            rotated.cubie1 = cubie5;
-//            rotated.cubie2 = cubie11;
-//            rotated.cubie5 = cubie6;
-//            rotated.cubie6 = cubie2;
-//            rotated.updateFaces();
-//            System.out.println("helpme");
-//            rotated.printFace();
-            //rotate cubies 1, 2, 5 and 6 CW
         }
         if(c == 'R'){
             //rotate cubies 1, 2, 5 and 6 CCW
-            //rotated.cubie1 = cubie2.rotate(c);
+
             rotated.cubie1 = cubie2.rotateCCW();
             rotated.cubie2 = cubie6.rotateCW();
             rotated.cubie6 = cubie5.rotateCCW();
@@ -258,12 +251,22 @@ public class RubiksCube {
             //rotated.printFace();
         }
         if(c == 'f'){
+            rotated.cubie1 = cubie4.rotateCW();
+            rotated.cubie4 = cubie8.rotateCCW();
+            rotated.cubie8 = cubie5.rotateCW();
+            rotated.cubie5 = cubie1.rotateCCW();
+            rotated.updateFaces();
+            //rotated.printFace();
 
         }
         if(c == 'F'){
-
+            rotated.cubie1 = cubie5.rotateCW();
+            rotated.cubie4 = cubie1.rotateCCW();
+            rotated.cubie8 = cubie4.rotateCW();
+            rotated.cubie5 = cubie8.rotateCCW();
+            rotated.updateFaces();
+            //rotated.printFace();
         }
-
 
         return rotated;
     }

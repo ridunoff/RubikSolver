@@ -32,8 +32,10 @@ public class Cubie {
     }
 
     public Cubie rotateCCW(){
+        //System.out.println(this.top);
         char temp = top;
         this.top = rightSide;
+
         this.rightSide = front;
         this.front = temp;
         return this;

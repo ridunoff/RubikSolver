@@ -18,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/RubiksCubeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="1110">
               <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="e#2985#2986#0" expanded="true" />
@@ -31,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="255" column="46" selection-start-line="255" selection-start-column="46" selection-end-line="255" selection-end-column="46" />
+            <state relative-caret-position="345">
+              <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cubie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+            <state relative-caret-position="331">
+              <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -84,8 +84,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,7 +109,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555127063599" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555127434757" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -135,7 +135,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RubiksCubeTest.testRotateRight">
+  <component name="RunManager" selected="JUnit.RubiksCubeTest.testRotateUpper">
     <configuration name="RubiksCubeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RubikSolver" />
       <option name="PACKAGE_NAME" value="" />
@@ -150,6 +150,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RubiksCubeTest" />
       <option name="METHOD_NAME" value="testHashCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RubiksCubeTest.testRotateFront" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RubikSolver" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RubiksCubeTest" />
+      <option name="METHOD_NAME" value="testRotateFront" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,8 +187,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RubiksCubeTest.testRotateRight" />
         <item itemvalue="JUnit.RubiksCubeTest.testRotateUpper" />
+        <item itemvalue="JUnit.RubiksCubeTest.testRotateRight" />
+        <item itemvalue="JUnit.RubiksCubeTest.testRotateFront" />
         <item itemvalue="JUnit.RubiksCubeTest" />
         <item itemvalue="JUnit.RubiksCubeTest.testHashCode" />
       </list>
@@ -198,42 +209,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 26m 07s.xml">
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 04m 30s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.13 at 00h 04m 50s.xml">
       <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 28m 42s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateUpper - 2019.04.13 at 00h 04m 53s.xml">
+      <configuration name="RubiksCubeTest.testRotateUpper" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 28m 51s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 04m 58s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 29m 00s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 07m 25s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 29m 03s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 07m 50s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 29m 09s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 08m 31s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 33m 18s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 08m 49s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 37m 01s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 09m 16s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 37m 28s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateRight - 2019.04.12 at 23h 39m 47s.xml">
-      <configuration name="RubiksCubeTest.testRotateRight" configurationId="JUnit" />
+    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 10m 03s.xml">
+      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="25" width="1851" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.062049862" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.062603876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -268,7 +279,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test/RubiksCubeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="1110">
           <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="e#2985#2986#0" expanded="true" />
@@ -279,15 +290,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cubie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+        <state relative-caret-position="331">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="255" column="46" selection-start-line="255" selection-start-column="46" selection-end-line="255" selection-end-column="46" />
+        <state relative-caret-position="345">
+          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
         </state>
       </provider>
     </entry>
