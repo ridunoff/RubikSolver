@@ -214,34 +214,48 @@ public class RubiksCube {
             rotated.cubie3 = cubie4;
             rotated.cubie4 = temp;
             rotated.updateFaces();
-            //rotated.printFace();
+            rotated.printFace();
 
         }
         if(c == 'u'){
             //rotate cubies 1 2 3 and 4 CCW
-            cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
+            //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
             rotated.cubie1 = cubie4;
-            rotated.cubie2 = cubie11;
+            rotated.cubie2 = cubie1;
             rotated.cubie3 = cubie2;
             rotated.cubie4 = cubie3;
             rotated.updateFaces();
-            //rotated.printFace();
+            rotated.printFace();
         }
         if(c == 'r'){
-            cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
+            //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
-            rotated.cubie1 = cubie5;
-            rotated.cubie2 = cubie11;
-            rotated.cubie5 = cubie6;
-            rotated.cubie6 = cubie2;
+            rotated.cubie1 = cubie5.rotateCCW();
+            rotated.cubie2 = cubie1.rotateCW();
+            rotated.cubie6 = cubie2.rotateCCW();
+            rotated.cubie5 = cubie6.rotateCW();
             rotated.updateFaces();
-            System.out.println("helpme");
-            rotated.printFace();
-            //rotate cubies 1, 2, 5 and 6
+            //rotated.printFace();
+
+//            rotated.cubie1 = cubie5;
+//            rotated.cubie2 = cubie11;
+//            rotated.cubie5 = cubie6;
+//            rotated.cubie6 = cubie2;
+//            rotated.updateFaces();
+//            System.out.println("helpme");
+//            rotated.printFace();
+            //rotate cubies 1, 2, 5 and 6 CW
         }
         if(c == 'R'){
-            //rotate cubies 3, 4, 7 and 8
+            //rotate cubies 1, 2, 5 and 6 CCW
+            //rotated.cubie1 = cubie2.rotate(c);
+            rotated.cubie1 = cubie2.rotateCCW();
+            rotated.cubie2 = cubie6.rotateCW();
+            rotated.cubie6 = cubie5.rotateCCW();
+            rotated.cubie5 = cubie1.rotateCW();
+            rotated.updateFaces();
+            //rotated.printFace();
         }
         if(c == 'f'){
 

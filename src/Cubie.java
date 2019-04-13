@@ -23,8 +23,20 @@ public class Cubie {
         return Character.toString(front);
     }
 
-    public void rotate(char direction){
+    public Cubie rotateCW(){
+        char temp = top;
+        this.top = front;
+        this.front = rightSide;
+        this.rightSide = temp;
+        return this;
+    }
 
+    public Cubie rotateCCW(){
+        char temp = top;
+        this.top = rightSide;
+        this.rightSide = front;
+        this.front = temp;
+        return this;
     }
 
 
