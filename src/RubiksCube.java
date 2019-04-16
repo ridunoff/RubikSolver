@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+
 // use this class if you are designing your own Rubik's cube implementation
 public class RubiksCube {
+    ArrayList<Character> sol=new ArrayList<Character>();
     Cubie cubie1;
     Cubie cubie2;
     Cubie cubie3;
@@ -23,7 +25,6 @@ public class RubiksCube {
     char[] face6;
 
     ArrayList<char[]> faceArray;
-
 
 
     // initialize a solved rubiks cube
@@ -45,12 +46,12 @@ public class RubiksCube {
 
 
         //face1 = new char[4];
-        face1 = new char[]{'r','r','r','r'};  //red
-        face2 = new char[]{'w','w','w','w'};  //white
-        face3 = new char[]{'b','b','b','b'};  //blue
-        face4 = new char[]{'g','g','g','g'};  //green
-        face5 = new char[]{'y','y','y','y'};  //yellow
-        face6 = new char[]{'o','o','o','o'};  //orange
+        face1 = new char[]{'r', 'r', 'r', 'r'};  //red
+        face2 = new char[]{'w', 'w', 'w', 'w'};  //white
+        face3 = new char[]{'b', 'b', 'b', 'b'};  //blue
+        face4 = new char[]{'g', 'g', 'g', 'g'};  //green
+        face5 = new char[]{'y', 'y', 'y', 'y'};  //yellow
+        face6 = new char[]{'o', 'o', 'o', 'o'};  //orange
 
 
         faceArray = new ArrayList<>();
@@ -79,8 +80,7 @@ public class RubiksCube {
 
     }
 
-    public void updateFaces(){
-
+    public void updateFaces() {
 
 
         face1 = new char[]{cubie1.top, cubie2.top, cubie3.top, cubie4.top};  //red
@@ -101,8 +101,8 @@ public class RubiksCube {
 
     }
 
-    public void printFace(){
-        for(int i=0; i<6; i++){
+    public void printFace() {
+        for (int i = 0; i < 6; i++) {
             System.out.println(new String(faceArray.get(i)));
         }
     }
@@ -115,47 +115,47 @@ public class RubiksCube {
         RubiksCube other = (RubiksCube) obj;
         // TODO
         char[] currentFace;
-        int counter=0;
+        int counter = 0;
 
-        for(int i=0;i<6;i++){
-            for(int j=0;j<6;j++){
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
                 int counter2 = 0;
-                for(int k=0; k<faceArray.get(j).length; k++){
+                for (int k = 0; k < faceArray.get(j).length; k++) {
                     if (other.faceArray.get(i)[k] == faceArray.get(j)[k]) {
                         counter2++;
                     }
                     //System.out.println(counter2);
-                    if(counter2==faceArray.get(j).length) {
+                    if (counter2 == faceArray.get(j).length) {
                         counter++;
                     }
                 }
             }
         }
 
-        if(counter==6) return true;
+        if (counter == 6) return true;
 
         return false;
     }
 
     /**
      * return a hashCode for this rubik's cube.
-     *
+     * <p>
      * Your hashCode must follow this specification:
-     *   if A.equals(B), then A.hashCode() == B.hashCode()
-     *
+     * if A.equals(B), then A.hashCode() == B.hashCode()
+     * <p>
      * Note that this does NOT mean:
-     *   if A.hashCode() == B.hashCode(), then A.equals(B)
+     * if A.hashCode() == B.hashCode(), then A.equals(B)
      */
     @Override
     public int hashCode() {
         int hashcode = 0;
-        for(int i=0;i<face1.length;i++){
-            hashcode += (int)face1[i] * i;
-            hashcode += (int)face2[i] * i;
-            hashcode += (int)face3[i] * i;
-            hashcode += (int)face4[i] * i;
-            hashcode += (int)face5[i] * i;
-            hashcode += (int)face6[i] * i;
+        for (int i = 0; i < face1.length; i++) {
+            hashcode += (int) face1[i] * i;
+            hashcode += (int) face2[i] * i;
+            hashcode += (int) face3[i] * i;
+            hashcode += (int) face4[i] * i;
+            hashcode += (int) face5[i] * i;
+            hashcode += (int) face6[i] * i;
         }
         //System.out.println(hashcode);
         return hashcode;
@@ -176,19 +176,18 @@ public class RubiksCube {
         topCubies[6] = cubie7.top;
         topCubies[7] = cubie8.top;
 
-        if(topCubies[0]==topCubies[1] && topCubies[2]==topCubies[3] && topCubies[1]==topCubies[3]){
+        if (topCubies[0] == topCubies[1] && topCubies[2] == topCubies[3] && topCubies[1] == topCubies[3]) {
             topCount = true;
         }
 
-        if(topCubies[4]==topCubies[5] && topCubies[6]==topCubies[7] && topCubies[4]==topCubies[7]){
+        if (topCubies[4] == topCubies[5] && topCubies[6] == topCubies[7] && topCubies[4] == topCubies[7]) {
             bottomCount = true;
         }
 
-        if(topCount && bottomCount) return true;
+        if (topCount && bottomCount) return true;
 
         return false;
     }
-
 
 
     // given a list of rotations, return a rubik's cube with the rotations applied
@@ -210,17 +209,17 @@ public class RubiksCube {
 
         RubiksCube rotated = new RubiksCube(this);
 
-        if(c == 'U'){
-            Cubie temp=cubie1;
+        if (c == 'U') {
+            Cubie temp = cubie1;
             rotated.cubie1 = cubie2;
             rotated.cubie2 = cubie3;
             rotated.cubie3 = cubie4;
             rotated.cubie4 = temp;
             rotated.updateFaces();
-            rotated.printFace();
+            //rotated.printFace();
 
         }
-        if(c == 'u'){
+        if (c == 'u') {
             //rotate cubies 1 2 3 and 4 CCW
             //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
@@ -229,9 +228,9 @@ public class RubiksCube {
             rotated.cubie3 = cubie2;
             rotated.cubie4 = cubie3;
             rotated.updateFaces();
-            rotated.printFace();
+            //rotated.printFace();
         }
-        if(c == 'r'){
+        if (c == 'r') {
             //rotate cubies 1, 2, 5 and 6 CW
             //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
@@ -243,7 +242,7 @@ public class RubiksCube {
             //rotated.printFace();;
 
         }
-        if(c == 'R'){
+        if (c == 'R') {
             //rotate cubies 1, 2, 5 and 6 CCW
 
             rotated.cubie1 = cubie2.rotateCCW();
@@ -253,7 +252,7 @@ public class RubiksCube {
             rotated.updateFaces();
             //rotated.printFace();
         }
-        if(c == 'f'){
+        if (c == 'f') {
             rotated.cubie1 = cubie4.rotateCW();
             rotated.cubie4 = cubie8.rotateCCW();
             rotated.cubie8 = cubie5.rotateCW();
@@ -262,7 +261,7 @@ public class RubiksCube {
             //rotated.printFace();
 
         }
-        if(c == 'F'){
+        if (c == 'F') {
             rotated.cubie1 = cubie5.rotateCW();
             rotated.cubie4 = cubie1.rotateCCW();
             rotated.cubie8 = cubie4.rotateCW();
@@ -284,7 +283,7 @@ public class RubiksCube {
         return r;
     }
 
-    public static char[] getScramble(int size){
+    public static char[] getScramble(int size) {
         char[] listTurns = new char[size];
         for (int i = 0; i < size; i++) {
             switch (ThreadLocalRandom.current().nextInt(0, 6)) {
@@ -311,25 +310,55 @@ public class RubiksCube {
         return listTurns;
     }
 
+    public Iterable<RubiksCube> neighbors() {
+        List<RubiksCube> choices = new ArrayList<RubiksCube>();
+        char[] moves = {'U', 'u', 'F', 'f', 'R', 'r'};
+        for (char m : moves) {
+            RubiksCube buddy = new RubiksCube(this);
+            choices.add(buddy.rotate(m));
+            buddy.sol.add(m);
+        }
+        return choices;
+    }
 
     // return the list of rotations needed to solve a rubik's cube
     public List<Character> solve() {
-        ArrayList<Character>sol=new ArrayList<Character>();
-        Queue<Character> q = new LinkedList<Character>();
+        ArrayList<RubiksCube> visited = new ArrayList<RubiksCube>();
+        Queue<RubiksCube> q = new LinkedList<RubiksCube>();
+        RubiksCube current= new RubiksCube(this);
+        visited.add(this);
+        q.add(this);
 
         while (!q.isEmpty()) {
-            char x=q.poll();//This could also be pollLast or pollFirst.... unclear which of the three
-            for y in this.
+
+            RubiksCube x = q.poll();//This could also be pollLast or pollFirst.... unclear which of the three
+            if (x.isSolved()) {
+                break;
+            }
+            for (RubiksCube y : x.neighbors()) {
+                boolean isntVisit = true;
+                {
+                    for (RubiksCube k : visited) {
+                        if (k.equals(y)) {
+                            isntVisit = false;
+                            current=k;
+                            break;
+                        }}
+                    if (isntVisit) {
+                        visited.add(current);
+                        q.add(current);
+
+                        }
+
+                    }
+                }
+
+            }
 
 
-
-
-
-
-
-
-        }
+        System.out.println(sol);
         return sol;
+
     }
 
 }

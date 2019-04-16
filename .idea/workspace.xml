@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f77c5faa-96d1-4c89-bc7f-69a46d24900d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RubiksCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RubiksCube.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +15,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/RubiksCubeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1798">
+            <state relative-caret-position="-1073">
               <caret line="86" selection-start-line="86" selection-end-line="86" />
               <folding>
                 <element signature="e#3018#3019#0" expanded="true" />
@@ -28,13 +27,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="321" column="26" selection-start-line="321" selection-start-column="26" selection-end-line="321" selection-end-column="26" />
+            <state relative-caret-position="404">
+              <caret line="358" column="8" selection-start-line="358" selection-start-column="8" selection-end-line="358" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9847#9858#0" expanded="true" />
-                <element signature="e#9929#9940#0" expanded="true" />
+                <element signature="e#313#324#0" expanded="true" />
+                <element signature="e#9818#9830#0" expanded="true" />
+                <element signature="e#10197#10209#0" expanded="true" />
+                <element signature="e#10257#10269#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cubie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <folding>
+                <element signature="e#492#493#0" expanded="true" />
+                <element signature="e#540#541#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SECOND">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -66,19 +90,19 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="992" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="928" />
-    <option name="height" value="1056" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -102,7 +126,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555143726398" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555441386274" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DSA-19/graphs/day03/src/Board.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -128,22 +152,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RubiksCubeTest.testRotateUpper">
+  <component name="RunManager" selected="JUnit.RubiksCubeTest.testSolve5">
     <configuration name="RubiksCubeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RubikSolver" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RubiksCubeTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RubiksCubeTest.testHashCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RubikSolver" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RubiksCubeTest" />
-      <option name="METHOD_NAME" value="testHashCode" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,13 +192,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RubiksCubeTest.testSolve5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RubikSolver" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RubiksCubeTest" />
+      <option name="METHOD_NAME" value="testSolve5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RubiksCubeTest.testSolve5" />
+        <item itemvalue="JUnit.RubiksCubeTest" />
         <item itemvalue="JUnit.RubiksCubeTest.testRotateUpper" />
         <item itemvalue="JUnit.RubiksCubeTest.testRotateFront" />
         <item itemvalue="JUnit.RubiksCubeTest.testRotateRight" />
-        <item itemvalue="JUnit.RubiksCubeTest" />
-        <item itemvalue="JUnit.RubiksCubeTest.testHashCode" />
       </list>
     </recent_temporary>
   </component>
@@ -202,21 +226,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RubiksCubeTest_testRotateUpper - 2019.04.13 at 00h 04m 53s.xml">
-      <configuration name="RubiksCubeTest.testRotateUpper" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 04m 58s.xml">
-      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 07m 25s.xml">
-      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 07m 50s.xml">
-      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 08m 31s.xml">
-      <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RubiksCubeTest_testRotateFront - 2019.04.13 at 00h 08m 49s.xml">
       <configuration name="RubiksCubeTest.testRotateFront" configurationId="JUnit" />
     </history-entry>
@@ -232,12 +241,26 @@
     <history-entry file="RubiksCubeTest_testRotateUpper - 2019.04.13 at 03h 57m 11s.xml">
       <configuration name="RubiksCubeTest.testRotateUpper" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RubiksCubeTest - 2019.04.16 at 14h 46m 23s.xml">
+      <configuration name="RubiksCubeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest - 2019.04.16 at 14h 50m 12s.xml">
+      <configuration name="RubiksCubeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest - 2019.04.16 at 14h 57m 57s.xml">
+      <configuration name="RubiksCubeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest - 2019.04.16 at 15h 01m 42s.xml">
+      <configuration name="RubiksCubeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.16 at 15h 02m 19s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="928" height="1056" extended-state="4" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12585033" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06246545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -246,7 +269,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33799785" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33751306" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -256,7 +279,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.034013607" />
+      <window_info anchor="right" id="Ant Build" order="1" visible="true" weight="0.016583748" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -279,17 +302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cubie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#492#493#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../DSA-19/graphs/day03/src/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2509">
@@ -299,9 +311,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cubie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/RubiksCubeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1798">
+        <state relative-caret-position="-1073">
           <caret line="86" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="e#3018#3019#0" expanded="true" />
@@ -311,12 +342,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="321" column="26" selection-start-line="321" selection-start-column="26" selection-end-line="321" selection-end-column="26" />
+        <state relative-caret-position="404">
+          <caret line="358" column="8" selection-start-line="358" selection-start-column="8" selection-end-line="358" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9847#9858#0" expanded="true" />
-            <element signature="e#9929#9940#0" expanded="true" />
+            <element signature="e#313#324#0" expanded="true" />
+            <element signature="e#9818#9830#0" expanded="true" />
+            <element signature="e#10197#10209#0" expanded="true" />
+            <element signature="e#10257#10269#0" expanded="true" />
           </folding>
         </state>
       </provider>
