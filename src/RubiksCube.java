@@ -70,7 +70,7 @@ public class RubiksCube {
     // creates a copy of the rubiks cube
     public RubiksCube(RubiksCube r) {
         // TODO
-        prevRot = 'V';
+        prevRot = r.prevRot;
 
         cubie1 = new Cubie(r.cubie1.front, r.cubie1.top, r.cubie1.rightSide);
         cubie2 = new Cubie(r.cubie2.front, r.cubie2.top, r.cubie2.rightSide);
@@ -81,7 +81,7 @@ public class RubiksCube {
         cubie7 = new Cubie(r.cubie7.front, r.cubie7.top, r.cubie7.rightSide);
         cubie8 = new Cubie(r.cubie8.front, r.cubie8.top, r.cubie8.rightSide);
         //sol = r.sol;
-        preCube=r;
+        preCube=r.preCube;
         updateFaces();
 
     }
@@ -216,7 +216,7 @@ public class RubiksCube {
         RubiksCube rotated = new RubiksCube(this);
         //rotated.sol.addAll(this.sol);
 
-        if (c == 'U') {
+        if (c == 'u') {
             Cubie temp = cubie1;
             rotated.cubie1 = cubie2;
             rotated.cubie2 = cubie3;
@@ -228,7 +228,7 @@ public class RubiksCube {
             //rotated.printFace();
 
         }
-        if (c == 'u') {
+        if (c == 'U') {
             //rotate cubies 1 2 3 and 4 CCW
             //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
@@ -241,7 +241,7 @@ public class RubiksCube {
 
             //rotated.printFace();
         }
-        if (c == 'r') {
+        if (c == 'R') {
             //rotate cubies 1, 2, 5 and 6 CW
             //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
 
@@ -255,7 +255,7 @@ public class RubiksCube {
             //rotated.printFace();;
 
         }
-        if (c == 'R') {
+        if (c == 'r') {
             //rotate cubies 1, 2, 5 and 6 CCW
 
             rotated.cubie1 = cubie2.rotateCCW();
@@ -267,7 +267,7 @@ public class RubiksCube {
 
             //rotated.printFace();
         }
-        if (c == 'f') {
+        if (c == 'F') {
             rotated.cubie1 = cubie4.rotateCW();
             rotated.cubie4 = cubie8.rotateCCW();
             rotated.cubie8 = cubie5.rotateCW();
@@ -278,7 +278,7 @@ public class RubiksCube {
             //rotated.printFace();
 
         }
-        if (c == 'F') {
+        if (c == 'f') {
             rotated.cubie1 = cubie5.rotateCW();
             rotated.cubie4 = cubie1.rotateCCW();
             rotated.cubie8 = cubie4.rotateCW();
@@ -337,9 +337,10 @@ public class RubiksCube {
             RubiksCube buddy = new RubiksCube(this);
             //buddy.sol.addAll(this.sol);
             //buddy.sol.add(m);
-            choices.add(buddy.rotate(m));
+
             buddy.prevRot=m;
             buddy.preCube=this;
+            choices.add(buddy.rotate(m));
             //System.out.println("hiyq");
             //System.out.println(buddy.sol);
 
@@ -349,12 +350,10 @@ public class RubiksCube {
 
     // return the list of rotations needed to solve a rubik's cube
     public List<Character> solve() {
-
-        HashMap<Integer, RubiksCube> visitedMap = new HashMap<>();
+        HashSet<RubiksCube> visitedMap = new HashSet<>();
         Queue<RubiksCube> q = new LinkedList<RubiksCube>();
-        visitedMap.put(this.hashCode(),this);
+        visitedMap.add(this);
         q.add(this);
-
         while (!q.isEmpty()) {
             RubiksCube currState = q.poll();//This could also be pollLast or pollFirst.... unclear which of the three
             for (RubiksCube currNeighbor : currState.neighbors()) {
@@ -363,40 +362,19 @@ public class RubiksCube {
                     sol.clear();
                     System.out.println(sol);
                     while (currNeighbor.preCube!=null)
-                    {
-                        System.out.println(sol);
-
-                        //if (currNeighbor.prevRot != 'V')
+                    {  System.out.println(sol);
                         char temp = currNeighbor.prevRot;
                         System.out.println(temp);
                         sol.add(temp);
                         currNeighbor=currNeighbor.preCube;
                         System.out.println(sol);
-
-
                     }
-                    System.out.println(sol.size());
-                    ArrayList<Integer> toRemove = new ArrayList<>();
-                    for (int i=0; i<sol.size(); i++){
-                        System.out.println(sol.get(i));
-                        if (sol.get(i) == 'V')
-                            toRemove.add(i);
-                    }
-                    for (int i=0; i<toRemove.size(); i++){
-                        System.out.println(toRemove.get(i));
-                        int index = toRemove.get(i);
-                        sol.remove(index-i);
-                    }
-
                     Collections.reverse(sol);
                     System.out.println(sol);
-                    return sol;
-                }
-
-                    if(visitedMap.get(currNeighbor.hashCode())==null){
-                        visitedMap.put(currNeighbor.hashCode(),currNeighbor);
+                    return sol;            }
+                    if(!visitedMap.contains(currNeighbor)){
+                        visitedMap.add(currNeighbor);
                         q.add(currNeighbor);
-
                         }
 
 

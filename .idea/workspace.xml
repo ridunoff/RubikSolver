@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f77c5faa-96d1-4c89-bc7f-69a46d24900d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RubiksCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RubiksCube.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="387" column="40" selection-start-line="387" selection-start-column="40" selection-end-line="387" selection-end-column="40" />
+            <state relative-caret-position="367">
+              <caret line="370" column="21" lean-forward="true" selection-start-line="370" selection-start-column="21" selection-end-line="370" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#9980#9992#0" expanded="true" />
@@ -98,6 +97,7 @@
       <find>printFa</find>
       <find>sol</find>
       <find>print</find>
+      <find>prevRot</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,7 +153,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555555439656" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555592084195" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DSA-19/graphs/day03/src/Solver.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -253,34 +253,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 29m 28s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 29m 59s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 31m 18s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 33m 45s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 35m 05s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 36m 53s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 37m 17s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 38m 00s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 40m 19s.xml">
-      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 41m 12s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 42m 19s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 43m 11s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 43m 35s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.17 at 22h 44m 01s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.18 at 08h 41m 11s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.18 at 08h 48m 53s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.18 at 08h 51m 04s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.18 at 08h 52m 09s.xml">
+      <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RubiksCubeTest_testSolve5 - 2019.04.18 at 08h 54m 46s.xml">
       <configuration name="RubiksCubeTest.testSolve5" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -381,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RubiksCube.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="387" column="40" selection-start-line="387" selection-start-column="40" selection-end-line="387" selection-end-column="40" />
+        <state relative-caret-position="367">
+          <caret line="370" column="21" lean-forward="true" selection-start-line="370" selection-start-column="21" selection-end-line="370" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#9980#9992#0" expanded="true" />
