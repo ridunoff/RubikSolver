@@ -8,8 +8,10 @@ import java.util.Queue;
 // use this class if you are designing your own Rubik's cube implementation
 public class RubiksCube {
     ArrayList<Character> sol=new ArrayList<Character>();
+
     char prevRot;
     RubiksCube preCube=null;
+
     Cubie cubie1;
     Cubie cubie2;
     Cubie cubie3;
@@ -18,7 +20,7 @@ public class RubiksCube {
     Cubie cubie6;
     Cubie cubie7;
     Cubie cubie8;
-    Cubie cubie11;
+
     char[] face1;
     char[] face2;
     char[] face3;
@@ -190,7 +192,11 @@ public class RubiksCube {
             bottomCount = true;
         }
 
-        if (topCount && bottomCount) return true;
+        if ((topCount && bottomCount) && (cubie5.front == cubie1.rightSide) && (cubie5.rightSide == cubie1.front)){
+            printFace();
+            return true;
+        }
+
 
         return false;
     }
@@ -203,7 +209,7 @@ public class RubiksCube {
         for (char r : c) {
             rub = rub.rotate(r);
         }
-//        printFace();
+        //printFace();
         return rub;
     }
 
@@ -331,12 +337,10 @@ public class RubiksCube {
 
     public Iterable<RubiksCube> neighbors() {
         List<RubiksCube> choices = new ArrayList<RubiksCube>();
-        char[] moves = {'U', 'u', 'F', 'f', 'R', 'r'};
+        char[] moves = {'U', 'u', 'R', 'r', 'F', 'f'};
         for (char m : moves) {
             //System.out.println(sol);
             RubiksCube buddy = new RubiksCube(this);
-            //buddy.sol.addAll(this.sol);
-            //buddy.sol.add(m);
 
             buddy.prevRot=m;
             buddy.preCube=this;
@@ -364,7 +368,7 @@ public class RubiksCube {
                     while (currNeighbor.preCube!=null)
                     {
                         char temp = currNeighbor.prevRot;
-                        System.out.println(temp);
+                        //System.out.println(temp);
                         sol.add(temp);
                         currNeighbor=currNeighbor.preCube;
 
