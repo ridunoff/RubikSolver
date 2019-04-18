@@ -360,14 +360,14 @@ public class RubiksCube {
                 {if (currNeighbor.isSolved()) {
                     System.out.println("solved");
                     sol.clear();
-                    System.out.println(sol);
+               
                     while (currNeighbor.preCube!=null)
-                    {  System.out.println(sol);
+                    {
                         char temp = currNeighbor.prevRot;
                         System.out.println(temp);
                         sol.add(temp);
                         currNeighbor=currNeighbor.preCube;
-                        System.out.println(sol);
+
                     }
                     Collections.reverse(sol);
                     System.out.println(sol);
@@ -380,7 +380,7 @@ public class RubiksCube {
 
                     }
                 }
-                System.out.println("heelo?");
+
             }
 
 
