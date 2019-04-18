@@ -24,21 +24,23 @@ public class Cubie {
     }
 
     public Cubie rotateCW(){
+        Cubie newCubie = new Cubie(this.front, this.top, this.rightSide);
         char temp = top;
-        this.top = front;
-        this.front = rightSide;
-        this.rightSide = temp;
-        return this;
+        newCubie.top = front;
+        newCubie.front = rightSide;
+        newCubie.rightSide = temp;
+        return newCubie;
     }
 
     public Cubie rotateCCW(){
         //System.out.println(this.top);
+        Cubie newCubie = new Cubie(this.front, this.top, this.rightSide);
         char temp = top;
-        this.top = rightSide;
+        newCubie.top = rightSide;
 
-        this.rightSide = front;
-        this.front = temp;
-        return this;
+        newCubie.rightSide = front;
+        newCubie.front = temp;
+        return newCubie;
     }
 
 

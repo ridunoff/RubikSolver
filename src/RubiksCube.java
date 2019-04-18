@@ -172,39 +172,42 @@ public class RubiksCube {
 
     public boolean isSolved() {
         // TODO
-        boolean topCount = false;
-        boolean bottomCount = false;
-        char[] topCubies = new char[8];
-        topCubies[0] = cubie1.top;
-        topCubies[1] = cubie2.top;
-        topCubies[2] = cubie3.top;
-        topCubies[3] = cubie4.top;
-        topCubies[4] = cubie5.top;
-        topCubies[5] = cubie6.top;
-        topCubies[6] = cubie7.top;
-        topCubies[7] = cubie8.top;
-
-        if (topCubies[0] == topCubies[1] && topCubies[2] == topCubies[3] && topCubies[1] == topCubies[3]) {
-            topCount = true;
-        }
-
-        if (topCubies[4] == topCubies[5] && topCubies[6] == topCubies[7] && topCubies[4] == topCubies[7]) {
-            bottomCount = true;
-        }
-
-        if ((topCount && bottomCount) && (cubie5.front == cubie1.rightSide) && (cubie5.rightSide == cubie1.front)){
-            printFace();
-            return true;
-        }
+        return (this.equals(new RubiksCube()));
 
 
-        return false;
+//
+//        boolean topCount = false;
+//        boolean bottomCount = false;
+//        char[] topCubies = new char[8];
+//        topCubies[0] = cubie1.top;
+//        topCubies[1] = cubie2.top;
+//        topCubies[2] = cubie3.top;
+//        topCubies[3] = cubie4.top;
+//        topCubies[4] = cubie5.top;
+//        topCubies[5] = cubie6.top;
+//        topCubies[6] = cubie7.top;
+//        topCubies[7] = cubie8.top;
+//
+//        if (topCubies[0] == topCubies[1] && topCubies[2] == topCubies[3] && topCubies[1] == topCubies[3]) {
+//            topCount = true;
+//        }
+//
+//        if (topCubies[4] == topCubies[5] && topCubies[6] == topCubies[7] && topCubies[4] == topCubies[7]) {
+//            bottomCount = true;
+//        }
+//
+//        if ((topCount && bottomCount) && (cubie5.front == cubie1.rightSide) && (cubie5.rightSide == cubie1.front)){
+//            printFace();
+//            return true;
+//        }
+//
+//
+//        return false;
     }
 
 
     // given a list of rotations, return a rubik's cube with the rotations applied
     public RubiksCube rotate(List<Character> c) {
-
         RubiksCube rub = this;
         for (char r : c) {
             rub = rub.rotate(r);
@@ -263,7 +266,6 @@ public class RubiksCube {
         }
         if (c == 'r') {
             //rotate cubies 1, 2, 5 and 6 CCW
-
             rotated.cubie1 = cubie2.rotateCCW();
             rotated.cubie2 = cubie6.rotateCW();
             rotated.cubie6 = cubie5.rotateCCW();
@@ -337,7 +339,7 @@ public class RubiksCube {
 
     public Iterable<RubiksCube> neighbors() {
         List<RubiksCube> choices = new ArrayList<RubiksCube>();
-        char[] moves = {'U', 'u', 'R', 'r', 'F', 'f'};
+        char[] moves = {'u', 'U', 'R', 'r', 'F', 'f'};
         for (char m : moves) {
             //System.out.println(sol);
             RubiksCube buddy = new RubiksCube(this);
