@@ -8,6 +8,8 @@ import java.util.Queue;
 // use this class if you are designing your own Rubik's cube implementation
 public class RubiksCube {
     ArrayList<Character> sol=new ArrayList<Character>();
+    char prevRot;
+    RubiksCube preCube=null;
     Cubie cubie1;
     Cubie cubie2;
     Cubie cubie3;
@@ -34,6 +36,7 @@ public class RubiksCube {
         //Each Cubie is read from the top right corner of the cube
         //The counts of positions go counter clockwise of the top layer
         //and then also counterclockwise of the bottom layer directly below 1-4
+        sol.clear();
 
         cubie1 = new Cubie('b', 'r', 'w');
         cubie2 = new Cubie('w', 'r', 'g');
@@ -67,6 +70,8 @@ public class RubiksCube {
     // creates a copy of the rubiks cube
     public RubiksCube(RubiksCube r) {
         // TODO
+        prevRot = 'V';
+
         cubie1 = new Cubie(r.cubie1.front, r.cubie1.top, r.cubie1.rightSide);
         cubie2 = new Cubie(r.cubie2.front, r.cubie2.top, r.cubie2.rightSide);
         cubie3 = new Cubie(r.cubie3.front, r.cubie3.top, r.cubie3.rightSide);
@@ -75,7 +80,8 @@ public class RubiksCube {
         cubie6 = new Cubie(r.cubie6.front, r.cubie6.top, r.cubie6.rightSide);
         cubie7 = new Cubie(r.cubie7.front, r.cubie7.top, r.cubie7.rightSide);
         cubie8 = new Cubie(r.cubie8.front, r.cubie8.top, r.cubie8.rightSide);
-
+        //sol = r.sol;
+        preCube=r;
         updateFaces();
 
     }
@@ -208,6 +214,7 @@ public class RubiksCube {
         // TODO
 
         RubiksCube rotated = new RubiksCube(this);
+        //rotated.sol.addAll(this.sol);
 
         if (c == 'U') {
             Cubie temp = cubie1;
@@ -216,6 +223,8 @@ public class RubiksCube {
             rotated.cubie3 = cubie4;
             rotated.cubie4 = temp;
             rotated.updateFaces();
+            //rotated.sol.add('U');
+
             //rotated.printFace();
 
         }
@@ -228,6 +237,8 @@ public class RubiksCube {
             rotated.cubie3 = cubie2;
             rotated.cubie4 = cubie3;
             rotated.updateFaces();
+         //   rotated.sol.add('u');
+
             //rotated.printFace();
         }
         if (c == 'r') {
@@ -239,6 +250,8 @@ public class RubiksCube {
             rotated.cubie6 = cubie2.rotateCCW();
             rotated.cubie5 = cubie6.rotateCW();
             rotated.updateFaces();
+           // rotated.sol.add('r');
+
             //rotated.printFace();;
 
         }
@@ -250,6 +263,8 @@ public class RubiksCube {
             rotated.cubie6 = cubie5.rotateCCW();
             rotated.cubie5 = cubie1.rotateCW();
             rotated.updateFaces();
+            //rotated.sol.add('R');
+
             //rotated.printFace();
         }
         if (c == 'f') {
@@ -258,6 +273,8 @@ public class RubiksCube {
             rotated.cubie8 = cubie5.rotateCW();
             rotated.cubie5 = cubie1.rotateCCW();
             rotated.updateFaces();
+            //rotated.sol.add('f');
+
             //rotated.printFace();
 
         }
@@ -267,6 +284,8 @@ public class RubiksCube {
             rotated.cubie8 = cubie4.rotateCW();
             rotated.cubie5 = cubie8.rotateCCW();
             rotated.updateFaces();
+            //rotated.sol.add('F');
+
             //rotated.printFace();
         }
 
@@ -314,52 +333,82 @@ public class RubiksCube {
         List<RubiksCube> choices = new ArrayList<RubiksCube>();
         char[] moves = {'U', 'u', 'F', 'f', 'R', 'r'};
         for (char m : moves) {
+            //System.out.println(sol);
             RubiksCube buddy = new RubiksCube(this);
+            //buddy.sol.addAll(this.sol);
+            //buddy.sol.add(m);
             choices.add(buddy.rotate(m));
-            buddy.sol.add(m);
+            buddy.prevRot=m;
+            buddy.preCube=this;
+            //System.out.println("hiyq");
+            //System.out.println(buddy.sol);
+
         }
         return choices;
     }
 
     // return the list of rotations needed to solve a rubik's cube
     public List<Character> solve() {
-        ArrayList<RubiksCube> visited = new ArrayList<RubiksCube>();
+
+        HashMap<Integer, RubiksCube> visitedMap = new HashMap<>();
         Queue<RubiksCube> q = new LinkedList<RubiksCube>();
-        RubiksCube current= new RubiksCube(this);
-        visited.add(this);
+        visitedMap.put(this.hashCode(),this);
         q.add(this);
 
         while (!q.isEmpty()) {
+            RubiksCube currState = q.poll();//This could also be pollLast or pollFirst.... unclear which of the three
+            for (RubiksCube currNeighbor : currState.neighbors()) {
+                {if (currNeighbor.isSolved()) {
+                    System.out.println("solved");
+                    sol.clear();
+                    System.out.println(sol);
+                    while (currNeighbor.preCube!=null)
+                    {
+                        System.out.println(sol);
 
-            RubiksCube x = q.poll();//This could also be pollLast or pollFirst.... unclear which of the three
-            if (x.isSolved()) {
-                break;
-            }
-            for (RubiksCube y : x.neighbors()) {
-                boolean isntVisit = true;
-                {
-                    for (RubiksCube k : visited) {
-                        if (k.equals(y)) {
-                            isntVisit = false;
-                            current=k;
-                            break;
-                        }}
-                    if (isntVisit) {
-                        visited.add(current);
-                        q.add(current);
+                        //if (currNeighbor.prevRot != 'V')
+                        char temp = currNeighbor.prevRot;
+                        System.out.println(temp);
+                        sol.add(temp);
+                        currNeighbor=currNeighbor.preCube;
+                        System.out.println(sol);
+
+
+                    }
+                    System.out.println(sol.size());
+                    ArrayList<Integer> toRemove = new ArrayList<>();
+                    for (int i=0; i<sol.size(); i++){
+                        System.out.println(sol.get(i));
+                        if (sol.get(i) == 'V')
+                            toRemove.add(i);
+                    }
+                    for (int i=0; i<toRemove.size(); i++){
+                        System.out.println(toRemove.get(i));
+                        int index = toRemove.get(i);
+                        sol.remove(index-i);
+                    }
+
+                    Collections.reverse(sol);
+                    System.out.println(sol);
+                    return sol;
+                }
+
+                    if(visitedMap.get(currNeighbor.hashCode())==null){
+                        visitedMap.put(currNeighbor.hashCode(),currNeighbor);
+                        q.add(currNeighbor);
 
                         }
 
+
                     }
                 }
-
+                System.out.println("heelo?");
             }
 
 
-        System.out.println(sol);
-        return sol;
+        //System.out.println(sol);
+        return new ArrayList<>();
 
     }
 
 }
-
