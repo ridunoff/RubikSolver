@@ -216,7 +216,7 @@ public class RubiksCube {
 
             //rotated.printFace();
         }
-        if (c == 'R') {
+        if (c == 'r') {
             //rotate cubies 1, 2, 5 and 6 CW
             rotated.cubie1 = cubie5.rotateCCW();
             rotated.cubie2 = cubie1.rotateCW();
@@ -227,7 +227,7 @@ public class RubiksCube {
             //rotated.printFace();;
 
         }
-        if (c == 'r') {
+        if (c == 'R') {
             //rotate cubies 1, 2, 5 and 6 CCW
             rotated.cubie1 = cubie2.rotateCCW();
             rotated.cubie2 = cubie6.rotateCW();
