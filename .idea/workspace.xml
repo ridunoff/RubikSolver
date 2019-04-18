@@ -123,7 +123,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555620852024" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555621222317" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -149,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RubiksCubeTest.testSolve7">
+  <component name="RunManager" selected="JUnit.RubiksCubeTest.testSolve10">
     <configuration name="RubiksCubeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RubikSolver" />
       <option name="PACKAGE_NAME" value="" />
@@ -201,9 +201,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RubiksCubeTest.testSolve10" />
         <item itemvalue="JUnit.RubiksCubeTest.testSolve7" />
         <item itemvalue="JUnit.RubiksCubeTest" />
-        <item itemvalue="JUnit.RubiksCubeTest.testSolve10" />
         <item itemvalue="JUnit.RubiksCubeTest.testRotatesDoNotModify" />
         <item itemvalue="JUnit.RubiksCubeTest.testSolve5" />
       </list>

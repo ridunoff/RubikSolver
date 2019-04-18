@@ -122,7 +122,7 @@ public class RubiksCube {
             return false;
         RubiksCube other = (RubiksCube) obj;
         // TODO
-        char[] currentFace;
+
         int counter = 0;
 
         for (int i = 0; i < 6; i++) {
@@ -132,7 +132,6 @@ public class RubiksCube {
                     if (other.faceArray.get(i)[k] == faceArray.get(j)[k]) {
                         counter2++;
                     }
-                    //System.out.println(counter2);
                     if (counter2 == faceArray.get(j).length) {
                         counter++;
                     }
@@ -173,36 +172,6 @@ public class RubiksCube {
     public boolean isSolved() {
         // TODO
         return (this.equals(new RubiksCube()));
-
-
-//
-//        boolean topCount = false;
-//        boolean bottomCount = false;
-//        char[] topCubies = new char[8];
-//        topCubies[0] = cubie1.top;
-//        topCubies[1] = cubie2.top;
-//        topCubies[2] = cubie3.top;
-//        topCubies[3] = cubie4.top;
-//        topCubies[4] = cubie5.top;
-//        topCubies[5] = cubie6.top;
-//        topCubies[6] = cubie7.top;
-//        topCubies[7] = cubie8.top;
-//
-//        if (topCubies[0] == topCubies[1] && topCubies[2] == topCubies[3] && topCubies[1] == topCubies[3]) {
-//            topCount = true;
-//        }
-//
-//        if (topCubies[4] == topCubies[5] && topCubies[6] == topCubies[7] && topCubies[4] == topCubies[7]) {
-//            bottomCount = true;
-//        }
-//
-//        if ((topCount && bottomCount) && (cubie5.front == cubie1.rightSide) && (cubie5.rightSide == cubie1.front)){
-//            printFace();
-//            return true;
-//        }
-//
-//
-//        return false;
     }
 
 
@@ -239,27 +208,21 @@ public class RubiksCube {
         }
         if (c == 'U') {
             //rotate cubies 1 2 3 and 4 CCW
-            //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
-
             rotated.cubie1 = cubie4;
             rotated.cubie2 = cubie1;
             rotated.cubie3 = cubie2;
             rotated.cubie4 = cubie3;
             rotated.updateFaces();
-         //   rotated.sol.add('u');
 
             //rotated.printFace();
         }
         if (c == 'R') {
             //rotate cubies 1, 2, 5 and 6 CW
-            //cubie11 = new Cubie(this.cubie1.front, this.cubie1.top, this.cubie1.rightSide);
-
             rotated.cubie1 = cubie5.rotateCCW();
             rotated.cubie2 = cubie1.rotateCW();
             rotated.cubie6 = cubie2.rotateCCW();
             rotated.cubie5 = cubie6.rotateCW();
             rotated.updateFaces();
-           // rotated.sol.add('r');
 
             //rotated.printFace();;
 
@@ -271,7 +234,6 @@ public class RubiksCube {
             rotated.cubie6 = cubie5.rotateCCW();
             rotated.cubie5 = cubie1.rotateCW();
             rotated.updateFaces();
-            //rotated.sol.add('R');
 
             //rotated.printFace();
         }
@@ -281,7 +243,6 @@ public class RubiksCube {
             rotated.cubie8 = cubie5.rotateCW();
             rotated.cubie5 = cubie1.rotateCCW();
             rotated.updateFaces();
-            //rotated.sol.add('f');
 
             //rotated.printFace();
 
@@ -292,7 +253,6 @@ public class RubiksCube {
             rotated.cubie8 = cubie4.rotateCW();
             rotated.cubie5 = cubie8.rotateCCW();
             rotated.updateFaces();
-            //rotated.sol.add('F');
 
             //rotated.printFace();
         }
@@ -341,7 +301,6 @@ public class RubiksCube {
         List<RubiksCube> choices = new ArrayList<RubiksCube>();
         char[] moves = {'u', 'U', 'R', 'r', 'F', 'f'};
         for (char m : moves) {
-            //System.out.println(sol);
             RubiksCube buddy = new RubiksCube(this);
 
             buddy.prevRot=m;
@@ -370,7 +329,6 @@ public class RubiksCube {
                     while (currNeighbor.preCube!=null)
                     {
                         char temp = currNeighbor.prevRot;
-                        //System.out.println(temp);
                         sol.add(temp);
                         currNeighbor=currNeighbor.preCube;
 
